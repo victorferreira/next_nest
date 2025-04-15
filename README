@@ -1,0 +1,21 @@
+## SETUP
+
+- Run Postgres and Redis
+``` docker compose up -d ```
+
+- Start backend service
+```
+cd server
+npm run start:dev
+```
+
+- Start frontend client (_on another terminal_)
+```
+cd client
+npm run dev
+```
+
+## NOTES
+
+- e2e tests using playwright to garantee integration between frontend and backend
+- backend tests using @nestjs/testing which uses Jest under the hood
