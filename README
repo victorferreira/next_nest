@@ -1,17 +1,46 @@
 ## SETUP
 
-- Run Postgres and Redis
+- Run Postgres and Redis via Docker
 ``` docker compose up -d ```
 
 - Start backend service
 ```
 cd server
+npm i
+
+```
+
+- Create a `.env` file like the example below
+
+```
+PORT=3001
+
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+```
+
+- Add db seed
+
+```
+npx prisma db seed
+```
+
+
+- Run the dev server
+```
 npm run start:dev
 ```
 
 - Start frontend client (_on another terminal_)
 ```
 cd client
+npm i
+```
+
+- Run the dev server
+```
 npm run dev
 ```
 
