@@ -21,10 +21,10 @@ REDIS_HOST=localhost
 REDIS_PORT=6379
 ```
 
-- Add db seed
+- Migrate and seed database
 
 ```
-npx prisma db seed
+npx prisma db migrate reset
 ```
 
 
