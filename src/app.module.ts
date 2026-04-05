@@ -7,6 +7,7 @@ import { PrismaService } from './prisma.service';
 import { UsersService } from './users/users.service';
 import { redisStore } from 'cache-manager-redis-store';
 import { CacheModule } from '@nestjs/cache-manager';
+import { ViewModule } from './view/view.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CacheModule } from '@nestjs/cache-manager';
       port: parseInt(process.env.REDIS_PORT ?? '6379', 10),
       ttl: 60,
     }),
+    ViewModule,
   ],
   controllers: [AppController, UsersController],
   providers: [AppService, PrismaService, UsersService],
