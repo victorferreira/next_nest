@@ -13,7 +13,7 @@ import { UsersService } from './users.service';
 import { User } from '@prisma/client';
 import { CreateUserDto, UpdateUserDto } from './user.dto';
 
-@Controller('users')
+@Controller('api/users')
 @UseInterceptors(CacheInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}

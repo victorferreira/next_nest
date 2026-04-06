@@ -9,8 +9,7 @@ type User = {
 };
 type UserInput = Omit<User, "id">;
 
-const baseUrl = "http://localhost:3001";
-const usersUrl = `${baseUrl}/users`;
+const usersUrl = "/api/users";
 
 const fetchUsers = async (): Promise<Array<User>> => {
   const response = await fetch(usersUrl);
