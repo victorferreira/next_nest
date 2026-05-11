@@ -23,6 +23,10 @@ npm-debug.log*
 /playwright-report/
 /playwright/.cache/
 
+# Mutation testing
+/reports
+/.stryker-tmp
+
 # IDEs and editors
 /.idea
 .vscode/*
