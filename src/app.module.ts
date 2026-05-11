@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersController } from './users/users.controller';
+import { TodosController } from './todos/todos.controller';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from './prisma.service';
 import { UsersService } from './users/users.service';
+import { TodosService } from './todos/todos.service';
 import { redisStore } from 'cache-manager-redis-store';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ViewModule } from './view/view.module';
@@ -20,7 +22,7 @@ import { ViewModule } from './view/view.module';
     }),
     ViewModule,
   ],
-  controllers: [AppController, UsersController],
-  providers: [AppService, PrismaService, UsersService],
+  controllers: [AppController, UsersController, TodosController],
+  providers: [AppService, PrismaService, UsersService, TodosService],
 })
 export class AppModule {}
